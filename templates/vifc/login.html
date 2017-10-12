@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block banner %}
+
+{% endblock %}
+{% block maincontent  %}
+
+<!-- <link href="{% static 'css/signin.css' %}" rel="stylesheet" type="text/css" media="all" />
+  
+<div class="jumbotron">
+ <div class="container">
+
+<!--       {% if form.errors %}
+        <p>Your username and password didn't match. Please try again.</p>
+    {% endif %} -->
+<!-- <center>
+ <form method="post" action=".">{% csrf_token %}
+        <table border="0">
+            <tr><th><label for="id_username">Username:</label></th><td>{{ form.username }}</td></tr>
+            <tr><th><label for="id_password">Password:</label></th><td>{{ form.password }}</td></tr>
+        </table>
+        <br>
+        <input type="submit" value="Login" />
+        <input type="hidden" name="next" value="/home" />
+    </form>
+    <a href="/register">Register</a>
+</center>
+
+ --> -->
+
+<form method="post" action=".">{% csrf_token %}
+        <table border="0">
+            {{ form.as_table }}
+        </table>
+        <input href="/complete" type="submit" value="Login" />
+    </form>
+    <a href="/register">Register</a>
+
+     <!--  <form class="form-signin">
+
+        <h2 class="form-signin-heading">Please sign in</h2>
+        <label for="inputEmail" class="sr-only">Email address</label>
+        <input type="email" id="inputEmail" name="username" class="form-control" placeholder="Email address" required="required" autofocus>
+        <label for="inputPassword" class="sr-only">Password</label>
+        <input type="password" id="inputPassword" name="password" class="form-control" placeholder="Password" required="required">
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> You agree to our Terms of Use
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+-->
+
+    </div> 
+    </div>
+{% endblock  %}

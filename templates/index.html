@@ -1,0 +1,70 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block banner %}
+
+{% endblock %}
+{% block maincontent  %}
+
+
+
+	<div class="banner-section">
+		<section class="slider">
+			<div class="flexslider">
+				<ul class="slides">
+					<li>
+						<div class="slider-info">
+							<img src="{% static 'images/ba1.jpg' %}" class="img-responsive" alt="">
+						</div>
+						<div class="container">
+							<div class="banner-text">
+								<h3>The Rhythm of life</h3>
+								<p>We strive to deliver the very best possible work that’s available out there, at any time. That’s how we set ourselves apart from the competition.</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="slider-info">
+							<img src="{% static 'images/ba2.jpg' %}" class="img-responsive" alt="">
+						</div>
+						<div class="container">
+							<div class="banner-text">
+								<h3>The Rhythm of life</h3>
+								<p>We strive to deliver the very best possible work that’s available out there, at any time. That’s how we set ourselves apart from the competition.</p>
+							</div>
+						</div>
+					</li>
+					<li>
+						<div class="slider-info">
+							<img src="{% static 'images/ba3.jpg' %}" class="img-responsive" alt="">
+						</div>
+						<div class="container">
+							<div class="banner-text">
+								<h3>The Rhythm of life</h3>
+								<p>We strive to deliver the very best possible work that’s available out there, at any time. That’s how we set ourselves apart from the competition.</p>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</section>
+
+			<script defer src="{% static 'js/jquery.flexslider.js' %}"></script>
+				<script type="text/javascript">
+					$(function(){
+						SyntaxHighlighter.all();
+					});
+					$(window).load(function(){
+					$('.flexslider').flexslider({
+					animation: "slide",
+					start: function(slider){
+					  $('body').removeClass('loading');
+					}
+					});
+					});
+				</script>
+	
+	</div>
+
+
+{% endblock  %}

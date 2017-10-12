@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+{% load staticfiles %}
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="VIFC is a membership platform that makes it easy for artists
+    and creators to get paid. Join over 50,000 creators earning salaries from over
+    1,000,000 monthly VIFC">
+
+
+    <meta name="author" content="Sangram Kakade and Edward Dan">
+  <!--   <link rel="icon" href="../../../../favicon.ico"> -->
+
+    <title>VIFC Project</title>
+
+
+<!--css-->
+<link href="{% static 'css/bootstrap/narrow-jumbotron.css' %}" rel="stylesheet" type="text/css" media="all" />
+
+
+<link href="{% static 'css/bootstrap/bootstrap.css' %}" rel="stylesheet" type="text/css" media="all" />
+<!-- <link href="{% static 'css/style.css' %}" rel="stylesheet" type="text/css" media="all" /> -->
+ <link href="{% static 'font-awesome-4.7.0/css/font-awesome.min.css'%}" rel="stylesheet" type="text/css">
+
+<!-- <script src="https://use.fontawesome.com/a56eb7ad57.js"></script>
+ -->
+
+<!--js-->
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.min.js' %}"></script>
+<!--js-->
+
+
+
+
+  {% block head_css %}{% endblock %}
+<!--gallery-->
+<!--startsmothscrolling-->
+
+
+
+{% block head_javascript %}{% endblock %}
+
+
+
+</head>
+<body>
+
+{% block header %}
+
+    <div class="container">
+      <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills float-right">
+            <li class="nav-item">
+              <a class="nav-link active" href="/">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Who We Are</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Start My Page</a>
+            </li>
+                        <li class="nav-item">
+              <a class="nav-link" href="#">Explore Creators</a>
+            </li>
+            {% if user.is_authenticated %}
+
+
+               {% else %}
+               <li class="nav-item">
+              <a class="nav-link" href="/signup">Sign Up</a>
+            </li>
+
+            {% endif %}
+            {% if user.is_authenticated %}
+              <li class="nav-item">
+              <a class="nav-link" href="/logout">Log Out</a>
+             
+            </li>
+            {% else %}
+            <li class="nav-item">
+             <a class="nav-link" href="/login">Log In</a>
+            </li>
+            {% endif %}
+
+
+          {% if user.is_authenticated %}
+
+
+           <li class="nav-item">
+              <a class="nav-link" style="color: Red;" href="#">Hello, {{ user.get_username }}</a>
+            </li>
+          {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+          </ul>
+        </nav>
+        <h3 class="text-muted">Project VIFC</h3>
+      </div>
+
+     
+
+ {% endblock %}
+
+
+
+  {% block maincontent %}{% endblock  %}
+
+
+
+<br><br>
+{% block footer %}
+			
+		<!--footer-->
+ <footer class="footer">
+        <p>&copy; Company 2017</p>
+      </footer>
+	<!--footer-->
+
+    {% endblock %}
+
+
+      {% block js %}
+
+<script src="{% static 'js/ie10-viewport-bug-workaround.js' %}"></script>
+      {% endblock  %}
+	</body>
+</html>
+

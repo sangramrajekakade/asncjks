@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% load staticfiles %}
+
+{% block banner %}
+
+{% endblock %}
+{% block maincontent  %}
+ <div class="jumbotron">
+        <h1 class="display-3">Regestration Complete</h1>
+        <p>Welcome {{ user.username }} !!!</p>
+    <a href="/">Logout</a>
+
+      </div>
+
+{% endblock  %}
